@@ -56,3 +56,13 @@ services:
       - 3333:3333
     depends_on:
       - kafka
+
+  node-antifraud:
+    build: ./antifraud
+    entrypoint: dockerize -wait http://control-center:9021 -timeout 300s -wait-retry-interval 5s
+    command: yarn dev
+    volumes:
+      - ./antifraud:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - node-ecommerce
