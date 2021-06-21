@@ -1,8 +1,8 @@
-# <p align="center">Eccomerce Microservices with Apache Kafka 🎇</p>
+# <p align="center">Ecommerce microservice with Apache Kafka & Node.js 🛒</p>
 
 <p align="center">
     <img src="https://img.shields.io/badge/Tools-Apache_Kafka-informational?style=flat-square&logo=apache-kafka&color=231F20&logoColor=231F20" alt="Apache Kafka" />
-    <img src="https://img.shields.io/badge/Code-Java-informational?style=flat-square&logo=java&color=007396&logoColor=007396" alt="MySQL" />
+    <img src="https://img.shields.io/badge/Code-NodeJS-informational?style=flat-square&logo=node.js&color=339933" alt="NodeJS" />
     <img src="https://img.shields.io/badge/Tools-Docker-informational?style=flat-square&logo=docker&color=2496ED" alt="Docker" />
 </p>
 
@@ -12,10 +12,12 @@ This project was developed following Alura's [Kafka: Produtores, Consumidores e 
 
 ## :computer: Technologies
 
+- [Node.js](https://nodejs.org/en/)
+- [KafkaJS](https://kafka.js.org/)
 - [Apache Kafka](https://kafka.apache.org/)
-- [Java](https://www.java.com/en/)
 - [Docker](https://www.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/)
+- [Dockerize](https://github.com/jwilder/dockerize)
 
 ## :scroll: Requirements
 
@@ -25,11 +27,11 @@ This project was developed following Alura's [Kafka: Produtores, Consumidores e 
 ## :cd: Installation
 
 ```sh
-git clone [PROJECT_REPO_LINK]
+git clone git@github.com:filipe1309/al-kafka-1-ecomm.git
 ```
 
 ```sh
-cd [PROJECT_REPO_NAME]
+cd al-kafka-1-ecomm
 ```
 
 ## :runner: Running
@@ -39,6 +41,7 @@ docker-compose up
 ```
 
 > Access http://localhost:9021
+> POST http://localhost:3333/new-order
 
 ## :white_check_mark: Tests
 
