@@ -50,3 +50,17 @@ docker-compose exec kafka kafka-console-producer --broker-list localhost:9092 --
 docker-compose exec kafka kafka-console-consumer  --bootstrap-server localhost:9092 --topic SHOP_NEWORDER
 docker-compose exec kafka kafka-console-consumer  --bootstrap-server localhost:9092 --topic SHOP_NEWORDER --from-beginning
 ```
+
+https://hmh.engineering/experimenting-with-apache-kafka-and-nodejs-5c0604211196
+https://github.com/drochgenius/experimenting-with-kafka
+https://github.com/SOHU-Co/kafka-node
+https://github.com/anthonyhastings/kafka-nodejs-example/blob/master/docker-compose.yml
+https://www.confluent.io/blog/getting-started-with-kafkajs/
+
+```sh
+docker-compose exec kafka kafka-topics --bootstrap-server localhost:9092 --describe
+```
+
+POST http://localhost:3333/new-order
+
+docker-compose exec kafka kafka-console-consumer --bootstrap-server localhost:9092 --topic ECOMMERCE_NEW_ORDER --from-beginning
