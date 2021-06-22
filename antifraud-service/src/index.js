@@ -22,6 +22,9 @@ async function run() {
             const prefix = `${topic}[${partition} | ${message.offset}] / ${message.timestamp}`
             console.log(`- ${prefix} ${message.key}#${message.value}`)
 
+            await new Promise(resolve => setTimeout(resolve, 5000));
+
+            console.log('Antifraud checked');
             // const payload = JSON.parse(message.value)
 
             // setTimeout(() => {
