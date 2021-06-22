@@ -58,11 +58,31 @@ services:
       - kafka
 
   node-antifraud:
-    build: ./antifraud
+    build: ./antifraud-service
     entrypoint: dockerize -wait http://control-center:9021 -timeout 300s -wait-retry-interval 5s
     command: yarn dev
     volumes:
-      - ./antifraud:/usr/src/app
+      - ./antifraud-service:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - node-ecommerce
+
+  node-email:
+    build: ./email-service
+    entrypoint: dockerize -wait http://control-center:9021 -timeout 300s -wait-retry-interval 5s
+    command: yarn dev
+    volumes:
+      - ./email-service:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - node-ecommerce
+
+  node-log:
+    build: ./log-service
+    entrypoint: dockerize -wait http://control-center:9021 -timeout 300s -wait-retry-interval 5s
+    command: yarn dev
+    volumes:
+      - ./log-service:/usr/src/app
       - /usr/src/app/node_modules
     depends_on:
       - node-ecommerce
