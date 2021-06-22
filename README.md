@@ -1,4 +1,4 @@
-# <p align="center">Ecommerce microservice with Apache Kafka & Node.js 🛒</p>
+# <p align="center">Ecommerce with Apache Kafka & Node.js 🛒</p>
 
 <p align="center">
     <img src="https://img.shields.io/badge/Tools-Apache_Kafka-informational?style=flat-square&logo=apache-kafka&color=231F20&logoColor=231F20" alt="Apache Kafka" />
@@ -40,22 +40,8 @@ cd al-kafka-1-ecomm
 docker-compose up
 ```
 
-> Access http://localhost:9021
+> Access http://localhost:9021  
 > POST http://localhost:3333/new-order
-
-## :white_check_mark: Tests
-
-After up the container:
-
-```sh
-docker-compose exec -t [CONTAINER_SERVICE_NAME] ./vendor/bin/phpunit
-```
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
 
 ## License
 
