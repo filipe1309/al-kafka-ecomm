@@ -70,11 +70,11 @@ services:
       - node-ecommerce
 
   node-antifraud-2:
-    build: ./antifraud-service-2
+    build: ./antifraud-service
     entrypoint: dockerize -wait http://control-center:9021 -timeout 300s -wait-retry-interval 5s
     command: yarn dev
     volumes:
-      - ./antifraud-service-2:/usr/src/app
+      - ./antifraud-service:/usr/src/app
       - /usr/src/app/node_modules
     depends_on:
       - node-ecommerce
