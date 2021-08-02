@@ -63,4 +63,31 @@ docker-compose exec kafka kafka-topics --bootstrap-server localhost:9092 --descr
 
 POST http://localhost:3333/new-order
 
+```sh
 docker-compose exec kafka kafka-console-consumer --bootstrap-server localhost:9092 --topic ECOMMERCE_NEW_ORDER --from-beginning
+```
+
+## CLASS-2
+
+### Change #patititions
+
+Change #patititions to new Topics
+
+```sh
+vi /etc/kafka/server.properties
+num.partitions=3
+
+docker-compose exec kafka kafka-topics --bootstrap-server localhost:9092 --describe
+```
+
+Change #patititions to existent Topics
+
+```sh
+docker-compose exec kafka kafka-topics --alter --zookeeper zookeeper:2181 --topic ECOMMERCE_NEW_ORDER --partitions 3
+```
+
+### Consumer Groups
+
+```sh
+docker-compose exec kafka kafka-consumer-groups --all-groups --bootstrap-server localhost:9092 --describe
+```
