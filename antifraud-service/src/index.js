@@ -10,6 +10,7 @@ const kafka = new Kafka({
 
 const topic = "ECOMMERCE_NEW_ORDER"
 const consumer = kafka.consumer({ groupId: "antifraud-group" })
+    //max.poll.records: 1 https://github.com/tulios/kafkajs/issues/420
 
 // const producer = kafka.producer()
 
@@ -22,10 +23,10 @@ async function run() {
             const prefix = `${topic}[${partition} | ${message.offset}] / ${message.timestamp}`
             console.log(`- ${prefix} ${message.key}#${message.value}`)
 
-            await new Promise(resolve => setTimeout(resolve, 5000));
+            await new Promise((resolve) => setTimeout(resolve, 5000))
 
-            console.log('Antifraud checked');
-            // const payload = JSON.parse(message.value)
+            console.log("Antifraud checked")
+                // const payload = JSON.parse(message.value)
 
             // setTimeout(() => {
             // producer.send({
