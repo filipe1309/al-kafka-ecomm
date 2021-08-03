@@ -91,3 +91,5 @@ docker-compose exec kafka kafka-topics --alter --zookeeper zookeeper:2181 --topi
 ```sh
 docker-compose exec kafka kafka-consumer-groups --all-groups --bootstrap-server localhost:9092 --describe
 ```
+## CLASS-3
+
