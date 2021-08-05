@@ -68,41 +68,41 @@ services:
       - kafka
 
   node-antifraud:
-    build: ./antifraud-service
+    build: ./service-antifraud
     entrypoint: dockerize -wait http://control-center:9021 -timeout 300s -wait-retry-interval 5s
     command: yarn dev
     volumes:
-      - ./antifraud-service:/usr/src/app
+      - ./service-antifraud:/usr/src/app
       - /usr/src/app/node_modules
     depends_on:
       - node-ecommerce
 
   node-antifraud-2:
-    build: ./antifraud-service
+    build: ./service-antifraud
     entrypoint: dockerize -wait http://control-center:9021 -timeout 300s -wait-retry-interval 5s
     command: yarn dev
     volumes:
-      - ./antifraud-service:/usr/src/app
+      - ./service-antifraud:/usr/src/app
       - /usr/src/app/node_modules
     depends_on:
       - node-ecommerce
 
   node-email:
-    build: ./email-service
+    build: ./service-email
     entrypoint: dockerize -wait http://control-center:9021 -timeout 300s -wait-retry-interval 5s
     command: yarn dev
     volumes:
-      - ./email-service:/usr/src/app
+      - ./service-email:/usr/src/app
       - /usr/src/app/node_modules
     depends_on:
       - node-ecommerce
 
   node-log:
-    build: ./log-service
+    build: ./service-log
     entrypoint: dockerize -wait http://control-center:9021 -timeout 300s -wait-retry-interval 5s
     command: yarn dev
     volumes:
-      - ./log-service:/usr/src/app
+      - ./service-log:/usr/src/app
       - /usr/src/app/node_modules
     depends_on:
       - node-ecommerce

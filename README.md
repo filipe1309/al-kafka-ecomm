@@ -8,7 +8,7 @@
 
 ## 💬 About
 
-This project was developed following Alura's [Kafka: Produtores, Consumidores e streams](https://cursos.alura.com.br/course/kafka-introducao-a-streams-em-microservicos) course.
+This project is a monorepo and it was developed following Alura's [Kafka: Produtores, Consumidores e streams](https://cursos.alura.com.br/course/kafka-introducao-a-streams-em-microservicos) course.
 
 ## :computer: Technologies
 

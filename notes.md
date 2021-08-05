@@ -97,3 +97,5 @@ docker-compose exec kafka kafka-consumer-groups --all-groups --bootstrap-server 
 ## CLASS-4
 
 https://docs.confluent.io/platform/current/installation/docker/operations/external-volumes.html
+## CLASS-5
+
