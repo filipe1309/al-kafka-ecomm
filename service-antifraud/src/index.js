@@ -1,7 +1,7 @@
-import kafkaService from "./kafka-service"
+import { kafkaConsumer } from "common-kafka"
 
 async function run() {
-    kafkaService("antifraud-group", "ECOMMERCE_NEW_ORDER", parse)
+    kafkaConsumer("antifraud-group", "ECOMMERCE_NEW_ORDER", parse)
 }
 
 async function parse({ topic, partition, message }) {

@@ -1,5 +1,7 @@
 import { Kafka, CompressionTypes } from "kafkajs"
-import { name } from "../package.json"
+import { v4 as uuidv4 } from "uuid"
+
+const name = "kafka-producer - " + uuidv4()
 
 /**
  * Kafka connection
@@ -14,7 +16,7 @@ const kafka = new Kafka({
     },
 })
 
-export default async function kafkaDispatcherService(topic, key, value) {
+export default async function kafkaProducer(topic, key, value) {
     const producer = kafka.producer()
     await producer.connect()
     return await producer.send({
