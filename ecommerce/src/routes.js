@@ -1,5 +1,6 @@
 import express from "express"
 import { v4 as uuidv4 } from "uuid"
+import Email from "./email"
 import kafkaDispatcherService from "./kafka-dispatcher-service"
 import Order from "./order"
 
@@ -15,10 +16,15 @@ routes.post("/new-order", async(req, res) => {
         userId,
         JSON.stringify(order)
     )
+
+    const email = new Email(
+        "Thank You",
+        "Thank you for your order! We are processing your order"
+    )
     const resultSendEmailEvent = await kafkaDispatcherService(
         "ECOMMERCE_SEND_EMAIL",
         userId,
-        "Thank you for your order! We are processing your order"
+        email
     )
 
     return res.json({ ok: true, resultNewOrderEvent, resultSendEmailEvent })
