@@ -97,5 +97,12 @@ docker-compose exec kafka kafka-consumer-groups --all-groups --bootstrap-server 
 ## CLASS-4
 
 https://docs.confluent.io/platform/current/installation/docker/operations/external-volumes.html
+
 ## CLASS-5
 
+```sh
+cd modules/common-kafka && npm install kafkajs uuid
+cd ecommerce && npm install --save ../modules/common-kafka
+
+docker-compose exec node-antifraud npm install --save ../modules/common-kafka
+```
