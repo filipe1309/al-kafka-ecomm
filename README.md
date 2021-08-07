@@ -32,11 +32,11 @@ Courses:
 ## :cd: Installation
 
 ```sh
-git clone git@github.com:filipe1309/al-kafka-1-ecomm.git
+git clone git@github.com:filipe1309/al-kafka-ecomm.git
 ```
 
 ```sh
-cd al-kafka-1-ecomm
+cd al-kafka-ecomm
 ```
 
 ## :runner: Running
@@ -65,3 +65,7 @@ docker-compose up
 <p align="center">
     Done with ♥ by <a style="font-weight: bold" href="https://www.linkedin.com/in/filipe1309/">Filipe Leuch Bonfim</a> 🖖
 </p>
+
+---
+
+> @ Generated with [ShubcoGen™](https://github.com/filipe1309/shubcogen)
