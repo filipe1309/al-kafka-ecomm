@@ -9,7 +9,7 @@ const routes = express.Router()
 routes.post("/new-order", async(req, res) => {
     const userId = uuidv4()
     const orderId = uuidv4()
-    const order = new Order(userId, orderId, Math.floor(Math.random() * 100 + 1))
+    const order = new Order(userId, orderId, Math.floor(Math.random() * 5000 + 1))
 
     const resultNewOrderEvent = await kafkaProducer(
         "ECOMMERCE_NEW_ORDER",
