@@ -1,7 +1,7 @@
-import kafkaService from "./kafka-service"
+import { kafkaConsumer } from "common-kafka"
 
 async function run() {
-    kafkaService("log-group", /ECOMMERCE.*/i, parse)
+    kafkaConsumer("log-group", /ECOMMERCE.*/i, parse)
 }
 
 async function parse({ topic, partition, message }) {

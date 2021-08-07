@@ -1,7 +1,7 @@
-import kafkaService from "./kafka-service"
+import { kafkaConsumer } from "common-kafka"
 
 async function run() {
-    kafkaService("email-group", "ECOMMERCE_SEND_EMAIL", parse)
+    kafkaConsumer("email-group", "ECOMMERCE_SEND_EMAIL", parse)
 }
 
 async function parse({ topic, partition, message }) {
